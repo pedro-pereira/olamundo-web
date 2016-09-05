@@ -1,0 +1,7 @@
+applications:
+- name: olamundo-web
+  mem: 1024M
+  disk: 1024M
+  instances: 1
+  path: ./target/template.springboot.angularjs-1.0-SNAPSHOT.war
+  buildpack: oracle_buildpack
