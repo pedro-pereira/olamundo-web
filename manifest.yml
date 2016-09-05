@@ -6,4 +6,4 @@ applications:
   path: ./target/template.springboot.angularjs-1.0-SNAPSHOT.war
   buildpack: oracle_buildpack
   env: 
-   JAVA_OPTS: "%JAVA_OPTS% -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8855 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+   JAVA_OPTS: %JAVA_OPTS% -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8855 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
