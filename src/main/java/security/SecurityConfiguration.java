@@ -61,6 +61,8 @@ class SecurityConfiguration {
 			strSecurity = strSecurity.replaceAll(Pattern.quote("{{ROLE_LOGGED_NAME}}"),
 					SecurityPermission.ROLE_LOGGED_NAME);
 
+      jmx.SampleAgent.criarAgente();
+
 		} catch (Exception e) {
 		}
 
