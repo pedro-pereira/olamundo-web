@@ -1,10 +1,8 @@
 package jmx;
 
-/*
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.jmx.export.annotation.ManagedResource;
-*/
 
 /**
  * Classe que representa ...
@@ -14,7 +12,7 @@ import org.springframework.jmx.export.annotation.ManagedResource;
  * @since 2016-09-05
  *
  */
-//@ManagedResource(objectName="jmx:name=JMXHello", description="Teste de JMX")
+@ManagedResource(objectName="jmx:name=JMXHello", description="Teste de JMX")
 	public class Hello implements HelloMBean {
    
    private int message = 100;
@@ -31,14 +29,14 @@ import org.springframework.jmx.export.annotation.ManagedResource;
       this.message = message;
    }
 
-//   @ManagedAttribute
+   @ManagedAttribute
    public int getMessage() {
       return message;
    }
 
-//   @ManagedOperation
+   @ManagedOperation
    public int sayHello() {
-      System.out.println(message);
+      System.out.println("TEEEEEEESTE... " + message);
       return message;
    }
 }
