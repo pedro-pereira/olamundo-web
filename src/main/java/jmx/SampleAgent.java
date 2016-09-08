@@ -24,7 +24,7 @@ public class SampleAgent {
                            "1.8");
 
             // simulate lots of important work being done...
-            Thread.sleep(10000);
+            Thread.sleep(Long.MAX_VALUE);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
