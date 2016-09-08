@@ -21,7 +21,7 @@ public class SampleAgent {
                                     "Zapcat test application");
             
             trapper.send("java.version",
-                           System.getProperty("java.version"));
+                           "1.8");
 
             // simulate lots of important work being done...
             Thread.sleep(10000);
