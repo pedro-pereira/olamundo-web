@@ -11,7 +11,6 @@ package jmx;
 
 import org.kjkoster.zapcat.Trapper;
 import org.kjkoster.zapcat.zabbix.ZabbixTrapper;
-import java.util.concurrent.TimeUnit;
 
 public class SampleAgent {
     
@@ -19,12 +18,10 @@ public class SampleAgent {
         Trapper trapper = null;
         try {
             trapper = new ZabbixTrapper("52.44.57.173",
-                                    "appserver8");
+                                    "Zapcat test application");
             
-            trapper.every(30, TimeUnit.SECONDS,
-                          "compiler.time",
-                          "java.lang:type=Compilation",
-                          "TotalCompilationTime");
+            trapper.send("java.version",
+                           System.getProperty("java.version"));
 
             // simulate lots of important work being done...
             Thread.sleep(Long.MAX_VALUE);
