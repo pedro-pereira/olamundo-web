@@ -9,27 +9,26 @@ package jmx;
  *
  */
 
-import org.kjkoster.zapcat.Agent;
-import org.kjkoster.zapcat.zabbix.ZabbixAgent;
+import org.kjkoster.zapcat.Trapper;
+import org.kjkoster.zapcat.zabbix.ZabbixTrapper;
 
 public class SampleAgent {
-
-   public static Agent agent;
-
-    public static void criarAgente() {
-
+    
+    public void criandoAgenteAtivo() {
+        Trapper trapper = null;
         try {
-            if(agent == null)
-            agent = new ZabbixAgent();
+            trapper = new ZabbixTrapper("52.44.57.173",
+                                    "Zapcat test application");
+            
+            trapper.send("java.version",
+                           System.getProperty("java.version"));
 
             // simulate lots of important work being done...
             Thread.sleep(10000);
-            System.out.println("******************************** O agente estah no ar... " + agent.toString());
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            agent.stop();
+            trapper.stop();
         }
     }
 }
