@@ -20,8 +20,10 @@ public class SampleAgent {
             trapper = new ZabbixTrapper("52.44.57.173",
                                     "appserver8");
             
-            trapper.send("java.version",
-                           "1.8");
+            trapper.every(30, TimeUnit.SECONDS,
+                          "compiler.time",
+                          "java.lang:type=Compilation",
+                          "TotalCompilationTime");
 
             // simulate lots of important work being done...
             Thread.sleep(Long.MAX_VALUE);
