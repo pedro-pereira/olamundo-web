@@ -18,7 +18,7 @@ public class SampleAgent {
         Trapper trapper = null;
         try {
             trapper = new ZabbixTrapper("52.44.57.173",
-                                    "Zapcat test application");
+                                    "appserver8");
             
             trapper.send("java.version",
                            "1.8");
