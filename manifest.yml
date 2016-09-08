@@ -5,3 +5,5 @@ applications:
   instances: 1
   path: ./target/template.springboot.angularjs-1.0-SNAPSHOT.war
   buildpack: oracle_buildpack
+  env:
+     JAVA_OPTS: -Dorg.kjkoster.zapcat.zabbix.server=http://52.44.57.173/zabbix -Dorg.kjkoster.zapcat.zabbix.serverport=5000 -Dorg.kjkoster.zapcat.zabbix.host=appserver8
