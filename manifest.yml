@@ -6,4 +6,4 @@ applications:
   path: ./target/template.springboot.angularjs-1.0-SNAPSHOT.war
   buildpack: oracle_buildpack
   env:
-     JAVA_OPTS: -Dorg.kjkoster.zapcat.zabbix.server=52.44.57.173 -Dorg.kjkoster.zapcat.zabbix.serverport=5000 -Dorg.kjkoster.zapcat.zabbix.host=appserver8
+     JAVA_OPTS: -Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/oracle_jre/bin/killjava.sh $CALCULATED_MEMORY -Dorg.kjkoster.zapcat.zabbix.server=52.44.57.173 -Dorg.kjkoster.zapcat.zabbix.serverport=5000 -Dorg.kjkoster.zapcat.zabbix.host=appserver8 -Djava.endorsed.dirs=$PWD/.java-buildpack/tomcat/endorsed -Daccess.logging.enabled=false -Dhttp.port=$PORT
