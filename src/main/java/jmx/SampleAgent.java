@@ -11,6 +11,7 @@ package jmx;
 
 import org.kjkoster.zapcat.Trapper;
 import org.kjkoster.zapcat.zabbix.ZabbixTrapper;
+import java.util.concurrent.TimeUnit;
 
 public class SampleAgent {
     
