@@ -17,7 +17,7 @@ public class SampleAgent {
     public void criandoAgenteAtivo() {
         Trapper trapper = null;
         try {
-            trapper = new ZabbixTrapper("52.44.57.173",
+            trapper = new ZabbixTrapper("52.44.57.173/zabbix",
                                     "Zapcat test application");
             
             trapper.send("java.version",
