@@ -43,7 +43,7 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 
 	@Autowired
 	private UserRoleDAO userRoleRepository;
-
+	
 	private UsernamePasswordAuthenticationToken authenticateDataBase(Authentication authentication)
 			throws AuthenticationException {
 		String name = authentication.getName();
@@ -54,6 +54,7 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 			throw new UsernameNotFoundException("Usuário não encontrado!");
 
 		User user = users.get(0);
+		
 		if (passwordEncoder.matches(rawPassword, user.getPassword())) {
 			Set<GrantedAuthority> roles = getAuthorities(user);
 			org.springframework.security.core.userdetails.User userDetails = new org.springframework.security.core.userdetails.User(
