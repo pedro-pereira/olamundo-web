@@ -5,5 +5,3 @@ applications:
   instances: 1
   path: ./target/template.springboot.angularjs-1.0-SNAPSHOT.war
   buildpack: oracle_buildpack
-  env:
-     JAVA_OPTS: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=olamundo-web.cronapp.io -Dcom.sun.management.jmxremote.port=8855 -Dcom.sun.management.jmxremote.rmi.port=8855 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false

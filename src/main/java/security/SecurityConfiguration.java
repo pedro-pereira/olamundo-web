@@ -1,7 +1,6 @@
 package security;
 
 import java.io.File;
-import java.net.InetAddress;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -61,10 +60,6 @@ class SecurityConfiguration {
 					SecurityPermission.ROLE_ADMIN_NAME);
 			strSecurity = strSecurity.replaceAll(Pattern.quote("{{ROLE_LOGGED_NAME}}"),
 					SecurityPermission.ROLE_LOGGED_NAME);
-					
-					InetAddress ip = InetAddress.getLocalHost();
-					
-			System.out.println("=========== Teste de IP: " + ip.getHostAddress() + " - " + ip.getHostName());		
 		} catch (Exception e) {
 		}
 

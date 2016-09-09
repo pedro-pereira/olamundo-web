@@ -27,6 +27,9 @@
             <resource>
                 <directory>src/main/java</directory>
             </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
         </resources>
         <plugins>
             <plugin>
@@ -65,13 +68,6 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>maven2-zapcat</id>
-            <name>Maven Zapcat</name>
-            <url>http://maven.laughingpanda.org/maven2/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -145,9 +141,8 @@
             <version>0.20.0.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.kjkoster</groupId>
-            <artifactId>zapcat</artifactId>
-            <version>1.2</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
     <properties>
@@ -156,6 +151,7 @@
         <project.cronospass.resource mimetype="folder/servercontext">config</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/src">src/test/java</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/src">src/main/java</project.cronospass.resource>
+        <project.cronospass.resource mimetype="folder/src">src/main/resources</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/web">src/main/webapp</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/libs">lib</project.cronospass.resource>
     </properties>
