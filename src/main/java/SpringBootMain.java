@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 
-@ComponentScan(basePackages = { "security", "auth.permission", "api.rest.events" })
+@ComponentScan(basePackages = { "security", "auth.permission", "api.rest.events", "jmx" })
 @SpringBootApplication
 public class SpringBootMain extends SpringBootServletInitializer {
   

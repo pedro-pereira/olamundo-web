@@ -24,6 +24,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import jmx.LoginService;
 import security.dao.UserDAO;
 import security.dao.UserRoleDAO;
 import security.entity.User;
@@ -34,6 +35,9 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationConfigurer.class);
 
 	private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
+	@Autowired
+	private LoginService loginService;
 
 	@Autowired
 	private HttpServletRequest request;
@@ -54,6 +58,10 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 			throw new UsernameNotFoundException("Usuário não encontrado!");
 
 		User user = users.get(0);
+		
+		System.out.println("---- Antes de login");
+		loginService.login(user.getLogin(), user.getPassword().toCharArray());
+		System.out.println("---- Depois do login");
 		
 		if (passwordEncoder.matches(rawPassword, user.getPassword())) {
 			Set<GrantedAuthority> roles = getAuthorities(user);
